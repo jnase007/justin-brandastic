@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justin Nassie — Fractional CMO</title>
+  <meta name="description" content="Justin Nassie — Fractional CMO backed by Brandastic. 15+ years scaling brands from $1M to $50M. 2-3 days/week. Full execution team included." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================
+       RESET & BASE
+    ========================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:        #1a1814;
+      --bg-card:   #211f1a;
+      --bg-alt:    #1e1c18;
+      --gold:      #B98A19;
+      --gold-light:#d4a82a;
+      --gold-dim:  #7a5c10;
+      --cream:     #F5F2EB;
+      --cream-dim: #c8c4bb;
+      --white:     #ffffff;
+      --border:    rgba(185, 138, 25, 0.18);
+      --radius:    12px;
+      --radius-lg: 20px;
+      --transition: 0.35s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    a:hover { color: var(--gold-light); }
+
+    img { max-width: 100%; display: block; }
+
+    section { overflow: hidden; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* =========================================
+       SCROLL ANIMATIONS
+    ========================================= */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+
+    /* =========================================
+       NAV
+    ========================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: rgba(26, 24, 20, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: padding var(--transition);
+    }
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span {
+      color: var(--gold);
+    }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--bg) !important;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      letter-spacing: 0.03em;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .nav-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    #hero {
+      padding: 130px 0 100px;
+      position: relative;
+    }
+
+    /* Subtle radial glow behind content */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(185,138,25,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {}
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-name {
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+    }
+
+    .hero-tagline {
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.25;
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--cream-dim);
+      font-weight: 400;
+      max-width: 480px;
+      margin-bottom: 38px;
+      line-height: 1.65;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--bg);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 30px;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(185,138,25,0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(185,138,25,0.45);
+      color: var(--bg);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream) !important;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.02em;
+      transition: border-color var(--transition), color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold) !important;
+      transform: translateY(-2px);
+    }
+
+    /* Headshot */
+    .hero-photo {
+      position: relative;
+    }
+    .hero-photo::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--gold), transparent 60%);
+      z-index: 0;
+    }
+    .hero-photo img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      border-radius: calc(var(--radius-lg) - 2px);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      filter: grayscale(15%) contrast(1.05);
+    }
+
+    /* =========================================
+       SECTION HEADERS
+    ========================================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--cream-dim);
+      max-width: 520px;
+      margin: 14px auto 0;
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       WHAT YOU GET
+    ========================================= */
+    #what-you-get {
+      padding: 100px 0;
+      background: var(--bg-alt);
+      position: relative;
+    }
+    #what-you-get::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 34px 28px;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      background: rgba(185,138,25,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .card-body {
+      font-size: 14px;
+      color: var(--cream-dim);
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       RESULTS
+    ========================================= */
+    #results {
+      padding: 100px 0;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .result-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .result-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    }
+    .result-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .result-client {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .result-headline {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .result-body {
+      font-size: 14px;
+      color: var(--cream-dim);
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       HOW IT WORKS
+    ========================================= */
+    #how-it-works {
+      padding: 100px 0;
+      background: var(--bg-alt);
+      position: relative;
+    }
+    #how-it-works::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      position: relative;
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .step-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(185,138,25,0.18);
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-body {
+      font-size: 14px;
+      color: var(--cream-dim);
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       INVESTMENT
+    ========================================= */
+    #investment {
+      padding: 100px 0;
+    }
+
+    .investment-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .investment-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .investment-price {
+      font-size: clamp(38px, 6vw, 58px);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .investment-compare {
+      font-size: 15px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .investment-terms {
+      font-size: 14px;
+      color: var(--cream-dim);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+    #about {
+      padding: 100px 0;
+      background: var(--bg-alt);
+      position: relative;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      color: var(--cream-dim);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .about-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 28px 36px;
+      margin-top: 36px;
+    }
+
+    .about-logos img {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1) opacity(0.35);
+      transition: opacity var(--transition);
+    }
+    .about-logos img:hover {
+      opacity: 1;
+      filter: brightness(0) invert(1) opacity(0.65);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--cream-dim);
+      line-height: 1.4;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer {
+      background: #131210;
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--cream-dim);
+    }
+    .footer-brand span {
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 22px;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: var(--cream-dim);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(200, 196, 187, 0.4);
+      width: 100%;
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(185,138,25,0.08);
+    }
+
+    /* =========================================
+       DIVIDER
+    ========================================= */
+    .gold-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0 auto 0;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-photo {
+        max-width: 320px;
+        margin: 0 auto;
+        order: -1;
+      }
+      .hero-sub { max-width: 100%; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #hero { padding: 110px 0 72px; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { text-align: center; }
+      .investment-box { padding: 40px 24px; }
+      .cards-grid, .results-grid, .steps-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Justin Nassie <span>/ Fractional CMO</span></div>
+      <a href="mailto:justin@brandastic.com" class="nav-cta">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow fade-up">Fractional CMO</div>
+          <h1 class="hero-name fade-up delay-1">Justin Nassie</h1>
+          <div class="hero-title fade-up delay-1">Fractional CMO</div>
+          <p class="hero-tagline fade-up delay-2">Your Marketing Leader.<br>My Agency Behind Me.</p>
+          <p class="hero-sub fade-up delay-3">15+ years scaling brands from $1M to $50M. 2–3 days/week. Full execution team included.</p>
+          <div class="hero-btns fade-up delay-4">
+            <a href="mailto:justin@brandastic.com" class="btn-primary">Book a Call</a>
+            <a href="https://brandastic.com/portfolio" target="_blank" rel="noopener" class="btn-secondary">See My Work</a>
+          </div>
+        </div>
+        <div class="hero-photo fade-up delay-2">
+          <img
+            src="https://brandastic.com/wp-content/uploads/2026/05/C_DSC03021_Edited.jpg"
+            alt="Justin Nassie — Fractional CMO"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT YOU GET ==================== -->
+  <section id="what-you-get">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-eyebrow">The Offering</span>
+        <h2 class="section-title">What You Get</h2>
+        <p class="section-subtitle">Not just strategy. Not just execution. Both — with a leader in the room who's done it before.</p>
+      </div>
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card fade-up delay-1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12L12 2l10 10"/><path d="M5 9v11h5v-6h4v6h5V9"/></svg>
+          </div>
+          <div class="card-title">Strategic Leadership</div>
+          <p class="card-body">I sit in your leadership meetings, own the marketing roadmap, and drive growth — not just advise from the sidelines.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card fade-up delay-2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M3 10h3m15 0h-3M6 16l-3 3m18-3l-3 3"/></svg>
+          </div>
+          <div class="card-title">Full Execution Team</div>
+          <p class="card-body">My 15-person Brandastic team handles SEO, PPC, content, social, design, and dev — ready to execute from day one.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card fade-up delay-3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="card-title">AI-Powered</div>
+          <p class="card-body">We use AI agents and automation to move 10x faster than traditional agencies — without sacrificing quality or brand integrity.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card fade-up delay-4">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div class="card-title">No Full-Time Overhead</div>
+          <p class="card-body">Skip the $250K+ salary, benefits, equity, and hiring risk. Month-to-month engagement — no long-term contracts required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS ==================== -->
+  <section id="results">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-eyebrow">Proven Results</span>
+        <h2 class="section-title">Real Brands. Real Growth.</h2>
+        <p class="section-subtitle">A sample of what we've built for clients across industries.</p>
+      </div>
+      <div class="results-grid">
+        <!-- Result 1 -->
+        <div class="result-card fade-up delay-1">
+          <div class="result-client">Paragon Implant</div>
+          <div class="result-headline">Targeting $15M Revenue Run-Rate</div>
+          <p class="result-body">Driving aggressive growth through a full-funnel paid media strategy and CRM overhaul — building a predictable revenue engine from the ground up.</p>
+        </div>
+        <!-- Result 2 -->
+        <div class="result-card fade-up delay-2">
+          <div class="result-client">California Online Public Schools</div>
+          <div class="result-headline">Brand Identity Driving Enrollment Growth</div>
+          <p class="result-body">Full brand identity system and website redesign — modernizing a public school's presence and powering enrollment through digital channels.</p>
+        </div>
+        <!-- Result 3 -->
+        <div class="result-card fade-up delay-3">
+          <div class="result-client">Young Surgical</div>
+          <div class="result-headline">25x ROAS on DTC E-Commerce</div>
+          <p class="result-body">Built and scaled a high-performance DTC channel through precision PPC and Google Shopping campaigns — turning ad spend into compounding returns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS ==================== -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-eyebrow">The Process</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple, fast, and built around your business — not ours.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-up delay-1">
+          <div class="step-number">01</div>
+          <div class="step-title">30-Min Audit</div>
+          <p class="step-body">We review your current marketing — what's working, what's broken, and where the real growth opportunities are hiding.</p>
+        </div>
+        <div class="step-card fade-up delay-2">
+          <div class="step-number">02</div>
+          <div class="step-title">Custom Roadmap</div>
+          <p class="step-body">I build a clear 90-day plan tailored to your business goals, budget, and competitive landscape — no generic playbooks.</p>
+        </div>
+        <div class="step-card fade-up delay-3">
+          <div class="step-number">03</div>
+          <div class="step-title">Execute &amp; Scale</div>
+          <p class="step-body">My team and I run the playbook while you focus on your business. We report, optimize, and scale what works — fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INVESTMENT ==================== -->
+  <section id="investment">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-eyebrow">Investment</span>
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+      </div>
+      <div class="investment-box fade-up delay-1">
+        <div class="investment-price">$10,000 – $15,000<span style="font-size:0.35em;font-weight:500;color:var(--cream-dim)">/mo</span></div>
+        <div class="investment-compare">Compared to $250K+ for a full-time CMO</div>
+        <p class="investment-terms">Month-to-month. No long-term contracts required.<br>Includes strategic leadership + full Brandastic execution team.</p>
+        <a href="mailto:justin@brandastic.com" class="btn-primary">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text fade-up">
+          <span class="section-eyebrow">About</span>
+          <h2 class="section-title" style="text-align:left;margin-bottom:22px">Built in the Trenches</h2>
+          <p>I'm Justin Nassie, founder of Brandastic — a digital marketing agency in Orange County that's served 450+ brands since 2010. I've spent 15 years in the trenches building marketing engines for companies from startups to $50M enterprises.</p>
+          <br />
+          <p>Now I'm offering my experience directly as your Fractional CMO — with my full team behind me. You get a seasoned marketing leader without the full-time cost or commitment.</p>
+          <div class="about-logos">
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/Ricoh_logo_white.png" alt="RICOH" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/USC-Logo_White.png" alt="USC" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/UFC-Gym_White.png" alt="UFC Gym" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/Orangetheory_White.png" alt="Orangetheory" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/HyperX_White.png" alt="HyperX" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/Fujifilm_White.png" alt="Fujifilm" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/Kia_White.png" alt="KIA" />
+            <img src="https://brandastic.com/wp-content/uploads/2022/08/Pocky_White.png" alt="Pocky" />
+          </div>
+        </div>
+        <div class="about-stats fade-up delay-2">
+          <div class="stat-box">
+            <div class="stat-number">450+</div>
+            <div class="stat-label">Brands Served</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years in the Industry</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Person Execution Team</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">25x</div>
+            <div class="stat-label">Best ROAS Achieved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Justin Nassie <span>|</span> Fractional CMO <span>|</span> Brandastic</div>
+        <div class="footer-links">
+          <a href="mailto:justin@brandastic.com">justin@brandastic.com</a>
+          <a href="tel:9498928944">949.892.8944</a>
+          <a href="https://www.linkedin.com/in/justinnassie" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://brandastic.com" target="_blank" rel="noopener">brandastic.com</a>
+        </div>
+        <p class="footer-copy">© 2026 Brandastic Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCROLL ANIMATIONS ==================== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
