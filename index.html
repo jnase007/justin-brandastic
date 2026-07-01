@@ -578,21 +578,53 @@
     }
 
     .about-logos {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 28px 36px;
+      position: relative;
+      overflow: hidden;
       margin-top: 36px;
+      width: 100%;
     }
 
-    .about-logos img {
-      height: 28px;
+    .about-logos::before,
+    .about-logos::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .about-logos::before {
+      left: 0;
+      background: linear-gradient(to right, #ffffff, transparent);
+    }
+    .about-logos::after {
+      right: 0;
+      background: linear-gradient(to left, #ffffff, transparent);
+    }
+
+    .about-logos-track {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
+
+    .about-logos-track img {
+      height: 40px;
       width: auto;
-      filter: brightness(0) opacity(0.5);
+      flex-shrink: 0;
+      filter: brightness(0) opacity(0.4);
       transition: filter var(--transition);
     }
-    .about-logos img:hover {
-      filter: brightness(0) opacity(0.75);
+    .about-logos-track img:hover {
+      filter: brightness(0) opacity(0.7);
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .about-stats {
@@ -884,14 +916,25 @@
           <br />
           <p>Now I'm offering my experience directly as your Fractional CMO — with my full team behind me. You get a seasoned marketing leader without the full-time cost or commitment.</p>
           <div class="about-logos">
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" alt="RICOH" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" alt="USC" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" alt="UFC Gym" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" alt="Orangetheory" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" alt="HyperX" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" alt="Fujifilm" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" alt="Pocky" />
-            <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" alt="KIA" />
+            <div class="about-logos-track">
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" alt="RICOH" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" alt="USC" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" alt="UFC Gym" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" alt="Orangetheory" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" alt="HyperX" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" alt="Fujifilm" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" alt="Pocky" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" alt="KIA" />
+              <!-- Duplicate set for seamless loop -->
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" alt="RICOH" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" alt="USC" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" alt="UFC Gym" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" alt="Orangetheory" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" alt="HyperX" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" alt="Fujifilm" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" alt="Pocky" aria-hidden="true" />
+              <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" alt="KIA" aria-hidden="true" />
+            </div>
           </div>
         </div>
         <div class="about-stats fade-up delay-2">
