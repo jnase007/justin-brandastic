@@ -710,7 +710,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 72px;
-      align-items: start;
+      align-items: center;
       padding-bottom: 72px;
     }
 
@@ -846,21 +846,21 @@
     ========================================= */
     .about-stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 28px;
-      padding-bottom: 8px;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-content: start;
+      margin-top: 6px;
     }
 
     .stat-box {
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.6);
-      border-radius: 12px;
-      padding: 18px 14px;
+      border: 1px solid rgba(185,138,25,0.12);
+      border-radius: 14px;
+      padding: 30px 18px;
       text-align: center;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
       transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
     }
     .stat-box:hover {
@@ -869,8 +869,8 @@
     }
 
     .stat-number {
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 36px;
+      font-weight: 900;
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 6px;
@@ -883,7 +883,7 @@
     }
 
     .stat-label {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--text-dim);
       line-height: 1.35;
       font-weight: 500;
@@ -1417,32 +1417,23 @@
           <br />
           <p style="font-size:14px;color:var(--text-dim);font-style:italic;">— Justin Nassie, Founder & Fractional CMO</p>
         </div>
-        <div class="about-visual fade-up delay-2">
-          <div class="about-headshot">
-            <img src="justin-headshot.jpg" alt="Justin Nassie facing camera" loading="lazy" />
-            <div class="about-headshot-caption">
-              <strong>Justin Nassie</strong>
-              <span>Founder, Brandastic · Fractional CMO</span>
-            </div>
+        <div class="about-stats fade-up delay-2">
+          <div class="stat-box">
+            <div class="stat-number">450+</div>
+            <div class="stat-label">Brands Served</div>
           </div>
-        </div>
-      </div>
-      <div class="about-stats fade-up">
-        <div class="stat-box">
-          <div class="stat-number">450+</div>
-          <div class="stat-label">Brands Served</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Years in the Industry</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">15</div>
-          <div class="stat-label">Person Execution Team</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">25x</div>
-          <div class="stat-label">Best ROAS Achieved</div>
+          <div class="stat-box">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Years in the Industry</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">15</div>
+            <div class="stat-label">Person Execution Team</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">25x</div>
+            <div class="stat-label">Best ROAS Achieved</div>
+          </div>
         </div>
       </div>
     </div>
