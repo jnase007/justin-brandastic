@@ -347,7 +347,7 @@
       width: 100%;
       border-radius: var(--radius-lg);
       object-fit: cover;
-      object-position: center 20%;
+      object-position: center top;
       aspect-ratio: 4/5;
       box-shadow:
         0 2px 0 rgba(255,255,255,0.8) inset,
@@ -762,13 +762,13 @@
       width: auto;
       flex-shrink: 0;
       object-fit: contain;
-      filter: none;
-      opacity: 0.92;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      /* Force dark monochrome so light/white logos stay visible on light bg */
+      filter: brightness(0) opacity(0.55);
+      transition: filter 0.3s ease, transform 0.3s ease;
       display: block;
     }
     .logos-track img:hover {
-      opacity: 1;
+      filter: brightness(0) opacity(0.8);
       transform: scale(1.04);
     }
 
@@ -1116,12 +1116,12 @@
         <div class="hero-photo fade-up delay-2">
           <img
             src="hero-team.jpg"
-            alt="Justin Nassie with the Brandastic team in the conference room"
+            alt="Justin Nassie in the Brandastic office"
             loading="eager"
           />
           <div class="hero-photo-caption">
-            <strong>Justin + Brandastic Team</strong>
-            <span>In-office leadership. Full execution bench.</span>
+            <strong>Justin Nassie</strong>
+            <span>Fractional CMO · Founder, Brandastic</span>
           </div>
         </div>
       </div>
