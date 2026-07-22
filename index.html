@@ -275,10 +275,38 @@
       line-height: 1.7;
     }
 
+    .scarcity-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #8a6712;
+      background: rgba(185,138,25,0.10);
+      border: 1px solid rgba(185,138,25,0.22);
+      border-radius: 999px;
+      padding: 8px 14px;
+      margin-bottom: 18px;
+    }
+    .scarcity-line::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(185,138,25,0.15);
+      flex-shrink: 0;
+    }
     .hero-btns {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+    }
+    .investment-scarcity {
+      display: block;
+      margin: 0 auto 18px;
+      width: fit-content;
     }
 
     .btn-primary {
@@ -1151,7 +1179,8 @@
           <h1 class="hero-name fade-up">Justin Nassie</h1>
           <p class="hero-tagline fade-up delay-1">Your Marketing Leader.<br>My Agency Behind Me.</p>
           <p class="hero-sub fade-up delay-2">Get a veteran CMO strategy plus an execution team at half the cost of a full-time hire.</p>
-          <p class="hero-sub fade-up delay-3" style="margin-top:-22px; margin-bottom:36px;">15+ years scaling brands from $1M to $50M. I lead your strategy 2–3 days a week, and my 15-person agency executes it. No $250K salary. No long-term contracts.</p>
+          <p class="hero-sub fade-up delay-3" style="margin-top:-22px; margin-bottom:18px;">15+ years scaling brands from $1M to $50M. I lead your strategy 2–3 days a week, and my 15-person agency executes it. No $250K salary. No long-term contracts.</p>
+          <div class="scarcity-line fade-up delay-3">Selectively taking on 1 new Fractional CMO client</div>
           <div class="hero-btns fade-up delay-4">
             <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
           </div>
@@ -1196,7 +1225,7 @@
 
   <div class="logo-cta-band">
     <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
-    <div class="logo-cta-note">Free growth audit · No long-term contracts · Full Brandastic team included</div>
+    <div class="logo-cta-note">Selectively taking on 1 new client · Free growth audit · Full Brandastic team included</div>
   </div>
 
 
@@ -1396,6 +1425,7 @@
       <div class="investment-box fade-up delay-1">
         <div class="investment-price">$5,000 – $15,000<span style="font-size:0.35em;font-weight:500;opacity:0.6">/mo</span></div>
         <div class="investment-compare">Compared to $250K+ for a full-time CMO</div>
+        <div class="scarcity-line investment-scarcity">Selectively taking on 1 new Fractional CMO client</div>
         <p class="investment-terms">Month-to-month. No long-term contracts required.<br>Includes strategic leadership + full Brandastic execution team.</p>
         <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
       </div>
