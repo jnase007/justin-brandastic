@@ -800,7 +800,7 @@
     .about-visual {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 0;
     }
     .about-headshot {
       position: relative;
@@ -846,8 +846,10 @@
     ========================================= */
     .about-stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+      padding-bottom: 8px;
     }
 
     .stat-box {
@@ -994,6 +996,47 @@
       margin-top: 18px;
       font-size: 13px;
       color: var(--text-dim);
+    }
+
+
+    /* Bottom team band */
+    .team-band {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #111;
+    }
+    .team-band img {
+      width: 100%;
+      height: clamp(280px, 42vw, 520px);
+      object-fit: cover;
+      object-position: center 40%;
+      display: block;
+      opacity: 0.92;
+    }
+    .team-band-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17,17,17,0.15) 0%, rgba(17,17,17,0.55) 100%);
+      pointer-events: none;
+    }
+    .team-band-copy {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 28px 24px 32px;
+      color: #fff;
+      text-align: center;
+    }
+    .team-band-copy strong {
+      display: block;
+      font-size: clamp(18px, 2.4vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .team-band-copy span {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
     }
 
     /* =========================================
@@ -1382,26 +1425,37 @@
               <span>Founder, Brandastic · Fractional CMO</span>
             </div>
           </div>
-          <div class="about-stats">
-            <div class="stat-box">
-              <div class="stat-number">450+</div>
-              <div class="stat-label">Brands Served</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Years in the Industry</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">15</div>
-              <div class="stat-label">Person Execution Team</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">25x</div>
-              <div class="stat-label">Best ROAS Achieved</div>
-            </div>
-          </div>
         </div>
       </div>
+      <div class="about-stats fade-up">
+        <div class="stat-box">
+          <div class="stat-number">450+</div>
+          <div class="stat-label">Brands Served</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years in the Industry</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15</div>
+          <div class="stat-label">Person Execution Team</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">25x</div>
+          <div class="stat-label">Best ROAS Achieved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== TEAM BAND ==================== -->
+  <section class="team-band" aria-label="Brandastic team">
+    <img src="about-team.jpg" alt="Brandastic team collaborating in the office" loading="lazy" />
+    <div class="team-band-overlay"></div>
+    <div class="team-band-copy">
+      <strong>Backed by a 15-person in-office team</strong>
+      <span>Strategy from me. Execution from Brandastic. No junior account-manager runaround.</span>
     </div>
   </section>
 
