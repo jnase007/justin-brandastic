@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Justin Nassie | Fractional CMO | Brandastic</title>
-  <meta name="description" content="Justin Nassie — Fractional CMO backed by Brandastic. 15+ years scaling brands from $1M to $50M. 2-3 days/week. Full execution team included." />
+  <meta name="description" content="Justin Nassie — Fractional CMO backed by Brandastic. Get veteran CMO strategy plus a full execution team at half the cost of a full-time hire." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -250,14 +250,6 @@
       line-height: 1.02;
       letter-spacing: -0.03em;
       margin-bottom: 8px;
-    }
-
-    .hero-title {
-      font-size: clamp(17px, 2.2vw, 22px);
-      font-weight: 500;
-      color: var(--gold);
-      letter-spacing: 0.05em;
-      margin-bottom: 26px;
     }
 
     .hero-tagline {
@@ -743,16 +735,87 @@
     }
 
     .logos-track img {
-      height: 40px; width: auto; flex-shrink: 0;
+      height: 40px;
       width: auto;
       flex-shrink: 0;
       object-fit: contain;
-      filter: brightness(0) opacity(0.5);
-      transition: filter 0.3s ease;
+      filter: none;
+      opacity: 0.92;
+      transition: opacity 0.3s ease, transform 0.3s ease;
       display: block;
     }
     .logos-track img:hover {
-      filter: brightness(0) opacity(0.7);
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    /* CTA band under logos */
+    .logo-cta-band {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px 34px;
+      text-align: center;
+    }
+    .logo-cta-band .btn-primary {
+      font-size: 14px;
+      padding: 14px 28px;
+    }
+    .logo-cta-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* Results CTA */
+    .results-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    /* About photo */
+    .about-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .about-headshot {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(185,138,25,0.18);
+      background: #fff;
+    }
+    .about-headshot img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .about-headshot-caption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      background: rgba(17,17,17,0.72);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .about-headshot-caption strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+      color: #fff;
+    }
+    .about-headshot-caption span {
+      color: rgba(255,255,255,0.82);
+      font-size: 12px;
     }
 
     /* =========================================
@@ -769,23 +832,23 @@
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.6);
-      border-radius: var(--radius-lg);
-      padding: 30px 24px;
+      border-radius: 12px;
+      padding: 18px 14px;
       text-align: center;
-      box-shadow: var(--shadow-card);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
       transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s cubic-bezier(0.22,1,0.36,1);
     }
     .stat-box:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.07);
     }
 
     .stat-number {
-      font-size: 40px;
-      font-weight: 900;
+      font-size: 26px;
+      font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       background: linear-gradient(135deg, #B98A19 0%, #e8c04a 50%, #c9a03a 100%);
       background-size: 200% auto;
       -webkit-background-clip: text;
@@ -795,9 +858,9 @@
     }
 
     .stat-label {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--text-dim);
-      line-height: 1.4;
+      line-height: 1.35;
       font-weight: 500;
     }
 
@@ -869,6 +932,9 @@
         grid-template-columns: 1fr;
         gap: 52px;
       }
+      .about-headshot {
+        max-width: 360px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -898,7 +964,7 @@
   <nav>
     <div class="nav-inner">
       <div class="nav-logo">Justin Nassie <span>/ Fractional CMO</span></div>
-      <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
+      <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="nav-cta">Book Free Strategy Call</a>
     </div>
   </nav>
 
@@ -907,19 +973,17 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-eyebrow fade-up">Fractional CMO</div>
-          <h1 class="hero-name fade-up delay-1">Justin Nassie</h1>
-          <div class="hero-title fade-up delay-1">Fractional CMO</div>
-          <p class="hero-tagline fade-up delay-2">Your Marketing Leader.<br>My Agency Behind Me.</p>
-          <p class="hero-sub fade-up delay-3">15+ years scaling brands from $1M to $50M. 2–3 days/week. Full execution team included.</p>
+          <h1 class="hero-name fade-up">Justin Nassie</h1>
+          <p class="hero-tagline fade-up delay-1">Your Marketing Leader.<br>My Agency Behind Me.</p>
+          <p class="hero-sub fade-up delay-2">Get a veteran CMO strategy plus an execution team at half the cost of a full-time hire.</p>
+          <p class="hero-sub fade-up delay-3" style="margin-top:-22px; margin-bottom:36px;">15+ years scaling brands from $1M to $50M. I lead your strategy 2–3 days a week, and my 15-person agency executes it. No $250K salary. No long-term contracts.</p>
           <div class="hero-btns fade-up delay-4">
-            <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book a Call</a>
-            <a href="https://brandastic.com/portfolio" target="_blank" rel="noopener" class="btn-secondary">See My Work</a>
+            <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
           </div>
         </div>
         <div class="hero-photo fade-up delay-2">
           <img
-            src="https://brandastic.com/wp-content/uploads/2026/07/Justin-72_portrait-2.jpg"
+            src="justin-headshot.jpg"
             alt="Justin Nassie — Fractional CMO"
             loading="eager"
           />
@@ -928,29 +992,33 @@
     </div>
   </section>
 
-<!-- Logo Marquee — full bleed inside the about section -->
-    <div class="logo-marquee-section">
-      <div class="logos-track">
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="RICOH" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" style="width:70px; height:auto; flex-shrink:0;" alt="USC" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="UFC Gym" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" style="width:160px; height:auto; flex-shrink:0;" alt="Orangetheory" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="HyperX" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="Fujifilm" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" style="width:70px; height:auto; flex-shrink:0;" alt="Pocky" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" style="width:60px; height:auto; flex-shrink:0;" alt="KIA" />
-        <!-- Duplicate set for seamless loop -->
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="RICOH" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" style="width:70px; height:auto; flex-shrink:0;" alt="USC" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="UFC Gym" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" style="width:160px; height:auto; flex-shrink:0;" alt="Orangetheory" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="HyperX" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="Fujifilm" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" style="width:70px; height:auto; flex-shrink:0;" alt="Pocky" aria-hidden="true" />
-        <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" style="width:60px; height:auto; flex-shrink:0;" alt="KIA" aria-hidden="true" />
-      </div>
+<!-- Logo Marquee -->
+  <div class="logo-marquee-section">
+    <div class="logos-track">
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="RICOH" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" style="width:70px; height:auto; flex-shrink:0;" alt="USC" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="UFC Gym" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" style="width:160px; height:auto; flex-shrink:0;" alt="Orangetheory" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="HyperX" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="Fujifilm" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" style="width:70px; height:auto; flex-shrink:0;" alt="Pocky" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" style="width:60px; height:auto; flex-shrink:0;" alt="KIA" />
+      <!-- Duplicate set for seamless loop -->
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/ricoh-logo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="RICOH" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/usc-logo.svg" style="width:70px; height:auto; flex-shrink:0;" alt="USC" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/ufc-gym-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="UFC Gym" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Orangetheory-Fitness-Logo-1.svg" style="width:160px; height:auto; flex-shrink:0;" alt="Orangetheory" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/hyperx-logo.svg" style="width:120px; height:auto; flex-shrink:0;" alt="HyperX" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/fujifilm-seeklogo.svg" style="width:100px; height:auto; flex-shrink:0;" alt="Fujifilm" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Pocky-Logo-1.svg" style="width:70px; height:auto; flex-shrink:0;" alt="Pocky" aria-hidden="true" />
+      <img src="https://brandastic.com/wp-content/uploads/2026/05/Kia-Logo-1.svg" style="width:60px; height:auto; flex-shrink:0;" alt="KIA" aria-hidden="true" />
     </div>
-  </section>
+  </div>
+
+  <div class="logo-cta-band">
+    <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
+    <div class="logo-cta-note">Free growth audit · No long-term contracts · Full Brandastic team included</div>
+  </div>
 
 
   <div class="section-divider"></div>
@@ -961,7 +1029,7 @@
       <div class="section-header fade-up">
         <span class="section-eyebrow">The Offering</span>
         <h2 class="section-title">What You Get</h2>
-        <p class="section-subtitle">Not just strategy. Not just execution. Both — with a leader in the room who's done it before.</p>
+        <p class="section-subtitle">Not just strategy. Not just execution — with a leader in the room who's done it before.</p>
       </div>
       <div class="cards-grid">
         <!-- Card 1 -->
@@ -1030,6 +1098,9 @@
           <p class="result-body">Built and scaled a high-performance DTC channel through precision PPC and Google Shopping campaigns — turning ad spend into compounding returns.</p>
         </div>
       </div>
+      <div class="results-cta fade-up">
+        <a href="https://brandastic.com/portfolio" target="_blank" rel="noopener" class="btn-secondary">View More Work</a>
+      </div>
     </div>
   </section>
 
@@ -1046,7 +1117,7 @@
       <div class="steps-grid">
         <div class="step-card fade-up delay-1">
           <div class="step-number">01</div>
-          <div class="step-title">30-Min Audit</div>
+          <div class="step-title">30-Min Growth Audit Call</div>
           <p class="step-body">We review your current marketing — what's working, what's broken, and where the real growth opportunities are hiding.</p>
         </div>
         <div class="step-card fade-up delay-2">
@@ -1076,7 +1147,7 @@
         <div class="investment-price">$5,000 – $15,000<span style="font-size:0.35em;font-weight:500;opacity:0.6">/mo</span></div>
         <div class="investment-compare">Compared to $250K+ for a full-time CMO</div>
         <p class="investment-terms">Month-to-month. No long-term contracts required.<br>Includes strategic leadership + full Brandastic execution team.</p>
-        <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Let's Talk</a>
+        <a href="https://calendar.app.google/CPAPTM86YQ7KH6UNA" target="_blank" rel="noopener" class="btn-primary">Book Your Free 30-Min Strategy Call</a>
       </div>
     </div>
   </section>
@@ -1089,33 +1160,43 @@
       <div class="about-inner">
         <div class="about-text fade-up">
           <span class="section-eyebrow left-align">About</span>
-          <h2 class="section-title" style="text-align:left;margin-bottom:24px">Built in the Trenches</h2>
-          <p>I'm Justin Nassie, founder of Brandastic — a digital marketing agency in Orange County that's served 450+ brands since 2010. I've spent 15 years in the trenches building marketing engines for companies from startups to $50M enterprises.</p>
+          <h2 class="section-title" style="text-align:left;margin-bottom:24px">Built in the Trenches.<br>Backed by a Team.</h2>
+          <p>I didn't start as a consultant. For the last 15 years, I've been in the trenches building Brandastic, growing 450+ brands, and navigating the exact same growth bottlenecks you're facing right now.</p>
           <br />
-          <p>Now I'm offering my experience directly as your Fractional CMO — with my full team behind me. You get a seasoned marketing leader without the full-time cost or commitment.</p>
+          <p>When you work with me, you get a battle-tested partner in the room who owns your growth and revenue strategy — and a full 15-person agency team right behind me to execute it fast. No wasted spend, no junior account reps, and no $250K salary overhead.</p>
+          <br />
+          <p style="font-size:14px;color:var(--text-dim);font-style:italic;">— Justin Nassie, Founder & Fractional CMO</p>
         </div>
-        <div class="about-stats fade-up delay-2">
-          <div class="stat-box">
-            <div class="stat-number">450+</div>
-            <div class="stat-label">Brands Served</div>
+        <div class="about-visual fade-up delay-2">
+          <div class="about-headshot">
+            <img src="justin-headshot.jpg" alt="Justin Nassie facing camera" loading="lazy" />
+            <div class="about-headshot-caption">
+              <strong>Justin Nassie</strong>
+              <span>Founder, Brandastic · Fractional CMO</span>
+            </div>
           </div>
-          <div class="stat-box">
-            <div class="stat-number">15+</div>
-            <div class="stat-label">Years in the Industry</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-number">15</div>
-            <div class="stat-label">Person Execution Team</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-number">25x</div>
-            <div class="stat-label">Best ROAS Achieved</div>
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="stat-number">450+</div>
+              <div class="stat-label">Brands Served</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years in the Industry</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">15</div>
+              <div class="stat-label">Person Execution Team</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">25x</div>
+              <div class="stat-label">Best ROAS Achieved</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    
+  </section>
 
   <!-- ==================== FOOTER ==================== -->
   <footer>
