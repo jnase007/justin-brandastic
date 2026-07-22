@@ -347,12 +347,35 @@
       width: 100%;
       border-radius: var(--radius-lg);
       object-fit: cover;
-      aspect-ratio: 3/4;
+      object-position: center 20%;
+      aspect-ratio: 4/5;
       box-shadow:
         0 2px 0 rgba(255,255,255,0.8) inset,
         0 24px 80px rgba(0,0,0,0.18),
         0 8px 32px rgba(185,138,25,0.12);
       animation: float-photo 6s ease-in-out infinite;
+    }
+    .hero-photo-caption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 2;
+      background: rgba(17,17,17,0.72);
+      color: #fff;
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    .hero-photo-caption strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+    .hero-photo-caption span {
+      color: rgba(255,255,255,0.82);
     }
 
     /* =========================================
@@ -864,6 +887,115 @@
       font-weight: 500;
     }
 
+
+    /* =========================================
+       COMPARISON TABLE
+    ========================================= */
+    #compare {
+      padding: 120px 0;
+      background: var(--bg);
+    }
+
+    .compare-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 18px;
+      border: 1px solid rgba(185,138,25,0.18);
+      box-shadow: var(--shadow-card);
+      background: #fff;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: #fff;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 18px 20px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .compare-table thead th {
+      background: #fafafa;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .compare-table thead th:first-child {
+      color: var(--text-dim);
+      font-weight: 700;
+      width: 22%;
+    }
+
+    .compare-table tbody th {
+      font-weight: 700;
+      color: var(--text);
+      background: #fcfcfc;
+      width: 22%;
+    }
+
+    .compare-table td {
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .compare-table .col-featured {
+      background: linear-gradient(180deg, rgba(185,138,25,0.10), rgba(185,138,25,0.04));
+      color: var(--text);
+      font-weight: 700;
+      position: relative;
+    }
+
+    .compare-table thead th.col-featured {
+      background: linear-gradient(180deg, rgba(185,138,25,0.16), rgba(185,138,25,0.08));
+      color: #8a6712;
+    }
+
+    .compare-table thead th.col-featured .badge {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--gold);
+      border-radius: 999px;
+      padding: 3px 8px;
+      vertical-align: middle;
+    }
+
+    .compare-table tbody tr:last-child th,
+    .compare-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table tbody tr:hover td,
+    .compare-table tbody tr:hover th {
+      background: rgba(185,138,25,0.03);
+    }
+
+    .compare-table tbody tr:hover td.col-featured {
+      background: linear-gradient(180deg, rgba(185,138,25,0.14), rgba(185,138,25,0.07));
+    }
+
+    .compare-note {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
     /* =========================================
        FOOTER
     ========================================= */
@@ -939,7 +1071,7 @@
 
     @media (max-width: 600px) {
       #hero { padding: 120px 0 80px; }
-      #what-you-get, #results, #how-it-works, #investment, #about { padding-top: 80px; padding-bottom: 80px; }
+      #what-you-get, #results, #how-it-works, #compare, #investment, #about { padding-top: 80px; padding-bottom: 80px; }
       #about { padding-bottom: 0; }
       .about-inner { padding-bottom: 60px; }
 
@@ -983,10 +1115,14 @@
         </div>
         <div class="hero-photo fade-up delay-2">
           <img
-            src="justin-headshot.jpg"
-            alt="Justin Nassie — Fractional CMO"
+            src="hero-team.jpg"
+            alt="Justin Nassie with the Brandastic team in the conference room"
             loading="eager"
           />
+          <div class="hero-photo-caption">
+            <strong>Justin + Brandastic Team</strong>
+            <span>In-office leadership. Full execution bench.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1131,6 +1267,77 @@
           <p class="step-body">My team and I run the playbook while you focus on your business. We report, optimize, and scale what works — fast.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== COMPARE ==================== -->
+  <section id="compare">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-eyebrow">The Difference</span>
+        <h2 class="section-title">Fractional CMO vs Traditional Hire vs Agency</h2>
+        <p class="section-subtitle">Same leadership quality. Fraction of the cost. Full team included.</p>
+      </div>
+      <div class="compare-wrap fade-up delay-1">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" class="col-featured">Fractional CMO <span class="badge">Best Value</span></th>
+              <th scope="col">Traditional Hire</th>
+              <th scope="col">Agency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Cost</th>
+              <td class="col-featured">$5K–$15K/mo</td>
+              <td>$250K–$350K/yr</td>
+              <td>$8K–$25K/mo</td>
+            </tr>
+            <tr>
+              <th scope="row">Strategy Ownership</th>
+              <td class="col-featured">Full CMO-level</td>
+              <td>Full CMO-level</td>
+              <td>Limited/none</td>
+            </tr>
+            <tr>
+              <th scope="row">Execution Team</th>
+              <td class="col-featured">15-person agency included</td>
+              <td>Hire separately</td>
+              <td>Agency team</td>
+            </tr>
+            <tr>
+              <th scope="row">Speed to Launch</th>
+              <td class="col-featured">Immediate</td>
+              <td>3–6 months to hire</td>
+              <td>2–4 weeks</td>
+            </tr>
+            <tr>
+              <th scope="row">Flexibility</th>
+              <td class="col-featured">Month-to-month</td>
+              <td>Full-time commitment</td>
+              <td>Contract-bound</td>
+            </tr>
+            <tr>
+              <th scope="row">Accountability</th>
+              <td class="col-featured">Direct to leadership</td>
+              <td>Direct to leadership</td>
+              <td>Account manager layer</td>
+            </tr>
+            <tr>
+              <th scope="row">Best For</th>
+              <td class="col-featured">Growth-stage cos needing leadership + execution</td>
+              <td>Large orgs with budget</td>
+              <td>Companies needing project work</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-note fade-up">Leadership + full Brandastic execution team — without the full-time overhead.</p>
     </div>
   </section>
 
